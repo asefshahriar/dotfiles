@@ -2,3 +2,4 @@
 set -o vi
 source /home/asefshahriar/.config/broot/launcher/bash/br
 export EDITOR=/usr/bin/vim
+

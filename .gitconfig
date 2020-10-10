@@ -8,7 +8,7 @@
 	rebase = false
 [core]
 	editor = vim
-	excludesfile = ~/gitignore_global
+	excludesfile = ~/dotfiles/.gitignore_global
 [color]
 	ui = true
 [alias]
