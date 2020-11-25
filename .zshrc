@@ -106,7 +106,7 @@ fi
 #  aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias s="shutdown -P now"
+alias shd="shutdown -P now"
 alias tkillall="tmux kill-server"
 alias tkillother="tmux kill-session -a"
 
