@@ -103,12 +103,10 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-#  aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias shd="shutdown -P now"
-alias tkillall="tmux kill-server"
-alias tkillother="tmux kill-session -a"
+# ALIASES
+if [ -f ~/.aliases ]; then
+   source ~/.aliases
+fi 
 
 case $- in *i*)
     [ -z "$TMUX" ] && exec tmux

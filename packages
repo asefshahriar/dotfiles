@@ -24,7 +24,7 @@ appstream-glib 0.7.18-1
 appstream-qt 0.12.11-1
 apr 1.7.0-3
 apr-util 1.6.1-8
-archlinux-appstream-data 20200720-1.1
+archlinux-appstream-data 20201020-1
 archlinux-keyring 20201028-1
 argon2 20190702-3
 ark 20.08.3-1
@@ -68,6 +68,7 @@ c-ares 1.16.1-2
 ca-certificates 20181109-4
 ca-certificates-mozilla 3.59-1
 ca-certificates-utils 20181109-4
+caffeine-ng 3.4.2-2.3
 cairo 1.17.2+25+gaee96d175-1
 cantarell-fonts 1:0.201-1
 cantata 2.4.2-1
@@ -109,6 +110,7 @@ db 5.3.28-5
 dbus 1.12.20-1
 dbus-glib 0.110-2
 dconf 0.38.0-1
+dd_rescue 1.99.8-3
 desktop-file-utils 0.26-1
 device-mapper 2.02.187-3
 dhclient 4.4.2-2
@@ -212,7 +214,7 @@ graphite 1:1.3.14-1
 grep 3.6-1
 groff 1.22.4-3
 grub 2.04-12
-grub-theme-manjaro 20.2-9
+grub-theme-manjaro 20.2-10
 gsettings-desktop-schemas 3.38.0-1
 gsfonts 20200910-1
 gsm 1.0.19-1
@@ -248,7 +250,7 @@ hardcode-fixer 1:r543.0321910-1
 harfbuzz 2.7.2-1
 harfbuzz-icu 2.7.2-1
 hdparm 9.58-3
-heroku-cli 7.47.2-3
+heroku-cli 7.47.3-1
 hicolor-icon-theme 0.17-2
 hidapi 0.10.0-2
 hplip 1:3.20.9-2
@@ -776,10 +778,11 @@ libyaml 0.2.5-1
 libzip 1.7.3-1
 libzmf 0.0.2-8
 licenses 20200427-1
+light 1.2.2-1
 lilv 0.24.10-1
 linux-api-headers 5.8-1
-linux-firmware 20201113.r1774.2ea8667-1
-linux54 5.4.77-1
+linux-firmware 20201120.r1785.bc9cd0b-1
+linux54 5.4.78-1
 lirc 1:0.10.1-6
 llvm-libs 11.0.0-1
 lm_sensors 3.6.0-2
@@ -804,14 +807,14 @@ manjaro-base-skel 20171029-3
 manjaro-browser-settings 20201114-1
 manjaro-documentation-en 20181009-1
 manjaro-firmware 20160419-1
-manjaro-hello 0.6.6-2
+manjaro-hello 0.6.6-3
 manjaro-hotfixes 2018.08-6
 manjaro-icons 20191015-1
 manjaro-kde-settings 20200804-1
 manjaro-keyring 20201030-1
 manjaro-printer 20200215-2
 manjaro-pulse 20200126-1
-manjaro-release 20.2pre-1
+manjaro-release 20.2rc-1
 manjaro-settings-manager 0.5.6-10
 manjaro-settings-manager-kcm 0.5.6-10
 manjaro-settings-manager-knotifier 0.5.6-10
@@ -905,7 +908,7 @@ pacman 5.2.2-3
 pacman-mirrors 4.16.4-1
 pam 1.5.0-1
 pamac-cli 9.5.12-1
-pamac-common 9.5.12-1
+pamac-common 9.5.12-2
 pamac-flatpak-plugin 9.5.12-1
 pamac-gtk 9.5.12-1
 pamac-snap-plugin 9.5.12-1
@@ -1009,6 +1012,7 @@ pulseaudio-lirc 13.99.3-1
 pulseaudio-qt 1.2-2
 pulseaudio-zeroconf 13.99.3-1
 purpose 5.76.0-1
+pyside2 5.15.1-1
 python 3.8.6-1
 python-alembic 1.4.3-1
 python-appdirs 1.4.4-1
@@ -1033,6 +1037,7 @@ python-distlib 0.3.1-1
 python-distro 1.5.0-1
 python-docopt 0.6.2-7
 python-editor 1.0.4-4
+python-ewmh 0.1.6-2
 python-extras 1.0.0-6
 python-fixtures 3.0.0-8
 python-flask 1.1.2-2
@@ -1052,7 +1057,7 @@ python-gobject 3.38.0-1
 python-html5lib 1.1-4
 python-idna 2.10-1
 python-itsdangerous 1.1.0-4
-python-jade-application-kit 3.5.5-1
+python-jade-application-kit 3.5.6-2
 python-jinja 2.11.2-2
 python-keyutils 0.6-4
 python-ldap3 2.8.1-1
@@ -1091,7 +1096,9 @@ python-reportlab 3.5.55-1
 python-requests 2.24.0-1
 python-resolvelib 0.5.1-1
 python-retrying 1.3.3-7
+python-setproctitle 1.1.10-5
 python-setuptools 1:50.3.2-1
+python-shiboken2 5.15.1-2
 python-simplejson 3.17.2-1
 python-sip 4.19.24-2
 python-six 1.15.0-1
@@ -1105,7 +1112,9 @@ python-toml 0.10.2-1
 python-urllib3 1.25.10-2
 python-webencodings 0.5.1-4
 python-werkzeug 1.0.1-2
+python-wheel 0.35.1-2
 python-wtforms 2.2.1-7
+python-xlib 0.28-1
 python-yaml 5.3.1-2
 python2 2.7.18-2
 python2-dbus 1.2.16-1
@@ -1181,7 +1190,7 @@ skanlite 2.2.0-1
 slang 2.3.2-2
 smartmontools 7.1-4
 smbclient 4.13.2-1
-snapd 2.47.1-1
+snapd 2.48-1
 snapd-glib 1.54-1
 snappy 1.1.8-2
 socat 1.7.3.4-2
@@ -1208,6 +1217,7 @@ sshfs 3.7.1-1
 startup-notification 0.12-7
 steam-manjaro 1.0.0.66-2
 stoken 0.92-4
+stow 2.3.1-3
 sublime-text 3211-1
 subversion 1.14.0-2
 sudo 1.9.3.p1-1
@@ -1229,7 +1239,7 @@ tar 1.32-3
 tbb 2020.3-1
 tcl 8.6.10-2
 tdb 1.4.3-2
-telegram-desktop 2.4.10-0.2
+telegram-desktop 2.4.11-0.1
 terminus-font 4.48-3
 tevent 1:0.10.2-1
 texinfo 6.7-3
@@ -1238,10 +1248,12 @@ texlive-core 2020.55416-1
 texmaker 5.0.4-1
 thin-provisioning-tools 0.9.0-1
 threadweaver 5.76.0-1
-timeshift 20.11.1.r1.g3391f69-2
+timeshift 20.11.1.r1.g3391f69-3
 tldr 1.1.0-1
 tlp 1.3.1-2
 tmux 3.1_c-1
+toilet 0.3.r155.3eb9d58-1
+toilet-fonts 1.0-2
 tpm2-tss 3.0.1-1
 tracker3 3.0.1-1
 transcode 1.1.7-35
@@ -1327,8 +1339,8 @@ xfsprogs 5.8.0-1
 xkeyboard-config 2.31-1
 xmlsec 1.2.31-1
 xorg-fonts-encodings 1.0.5-2
-xorg-server 1.20.9-3
-xorg-server-common 1.20.9-3
+xorg-server 1.20.9.r21.g5c400cae1-1
+xorg-server-common 1.20.9.r21.g5c400cae1-1
 xorg-setxkbmap 1.3.2-2
 xorg-twm 1.0.11-1
 xorg-xauth 1.1-2

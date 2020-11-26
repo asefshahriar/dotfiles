@@ -9,14 +9,18 @@ function alias_if_exists() {
 
 # Better defaults
 # alias ncdu='ncdu --confirm-quit --color dark'
-alias crontab="VIM_CRONTAB=true crontab"
-alias_if_exists 'diff' 'colordiff'
-alias_if_exists 'ag' 'rg'
-alias_if_exists 'vim' 'nvim'
-alias_if_exists 'fdupes' 'jdupes'
-
+#alias crontab="VIM_CRONTAB=true crontab"
+#alias_if_exists 'diff' 'colordiff'
+#alias_if_exists 'ag' 'rg'
+#alias_if_exists 'vi' 'vim'
+#alias_if_exists 'fdupes' 'jdupes'
 
 # Shortcuts
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias shd="shutdown -P now"
+alias tkillall="tmux kill-server"
+alias tkillother="tmux kill-session -a"
 
 ## cd & ls
 alias dc="cd"
@@ -31,19 +35,8 @@ mvr () {
     mv $2 $1
 }
 
-## Git
-alias ga='git add'
-alias gst='git status'
-alias gu='git pull'
-alias gg='git graph'
-# unalias gd
-alias gd='git diff'
-alias gsu='git stash && git pull && git stash pop'
   # Note that gs is also ghostscript
-alias ghostscript="/usr/local/bin/gs"
-function gD(){
-    git diff $@ | ydiff
-}
+alias ghostscript='/usr/bin/gs'
 
 ## Jupyter
 alias jc="jupyter console"
@@ -67,11 +60,12 @@ alias grepc="grep -P --color=always" #Color grep
 alias printpath='echo $PATH | sed "s/:/\\n/g"'
 # Other
 # alias matlabc='matlab -nodesktop -nosplash'
+
   # Create separator using current columns
 alias sep='tput cols | python -c "import sys; print(\"=\"*int(sys.stdin.read().strip()))"'
 alias rg="sep; rg -u"
 
-alias clock='watch -n 0.1 "date +"%H:%M:%S" | toilet -f bigmono9"' # -f future
+alias clock='date | toilet -f smblock' # -f future
 # Rename terminal Windows
   # $1 = type; 0 - both, 1 - tab, 2 - title
   # rest = text
