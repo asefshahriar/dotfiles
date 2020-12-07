@@ -69,24 +69,12 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-au BufNewFile,BufRead *.py
-    \ setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.js,*.html,*.css,*.tex
-    \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
-
-
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
 " OPTIONAL: This enables automatic indentation as you type.
 filetype indent on
 
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-let g:Tex_MultipleCompileFormats = 'pdf'
-let g:Tex_DefaultTargetFormat = 'pdf'
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 " Nerdtree shortcut
