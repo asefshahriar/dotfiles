@@ -21,6 +21,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias shd="shutdown -P now"
 alias tkillall="tmux kill-server"
 alias tkillother="tmux kill-session -a"
+alias update="sudo pacman -Syyu; omz update; /home/asefshahriar/dotfiles/vim/.vim/pack/vendor/start/update_plugin.sh"
 
 ## cd & ls
 alias dc="cd"
