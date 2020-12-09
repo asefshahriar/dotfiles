@@ -26,13 +26,10 @@ autocmd FileType markdown setlocal spell spelllang=en_us
 let g:markdown_fenced_languages = [
     \ 'bash=sh',
     \ 'c',
-    \ 'coffee',
-    \ 'erb=eruby',
     \ 'javascript',
     \ 'json',
     \ 'perl',
     \ 'python',
-    \ 'ruby',
     \ 'yaml',
     \ 'go',
 \]
