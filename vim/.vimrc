@@ -30,6 +30,17 @@ set relativenumber
 
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
+"Status-line
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=\ %y
+set statusline+=\ %r
+set statusline+=%#CursorLineNr#
+set statusline+=\ %F
+set statusline+=%= "Right side settings
+set statusline+=%#Search#
+set statusline+=\ %l/%L
+set statusline+=\ [%c]
 
 " The backspace key has slightly unintuitive behavior by default. For example,
 " by default, you can't backspace before the insertion point set with 'i'.
@@ -237,6 +248,9 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+"Copying to system clipboard or + buffer 
+vnoremap <C-c> "*y :let @+=@<CR>
+map <C-p> "+P
 
 " Lose Bad Habits
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/

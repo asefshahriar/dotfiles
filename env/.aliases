@@ -12,7 +12,7 @@ function alias_if_exists() {
 #alias crontab="VIM_CRONTAB=true crontab"
 #alias_if_exists 'diff' 'colordiff'
 #alias_if_exists 'ag' 'rg'
-#alias_if_exists 'vi' 'vim'
+alias_if_exists 'vi' 'vim'
 #alias_if_exists 'fdupes' 'jdupes'
 
 # Shortcuts
@@ -21,7 +21,10 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias shd="shutdown -P now"
 alias tkillall="tmux kill-server"
 alias tkillother="tmux kill-session -a"
-alias update="sudo pacman -Syyu; omz update; /home/asefshahriar/dotfiles/vim/.vim/pack/vendor/start/update_plugin.sh"
+alias update="sudo pacman -Syyu; /home/asefshahriar/dotfiles/vim/.vim/pack/vendor/start/update_plugin.sh; omz update"
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+alias docker='sudo docker'
+
 
 ## cd & ls
 alias dc="cd"

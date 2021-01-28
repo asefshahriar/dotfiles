@@ -125,3 +125,5 @@ export TLDR_DOWNLOAD_CACHE_LOCATION="https://tldr-pages.github.io/assets/tldr.zi
 export TLDR_LANGUAGE="en"
 
 
+
+source /home/asefshahriar/.config/broot/launcher/bash/br
