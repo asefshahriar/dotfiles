@@ -8,12 +8,12 @@ function alias_if_exists() {
 
 
 # Better defaults
-# alias ncdu='ncdu --confirm-quit --color dark'
-#alias crontab="VIM_CRONTAB=true crontab"
-#alias_if_exists 'diff' 'colordiff'
-#alias_if_exists 'ag' 'rg'
+alias ncdu='ncdu --confirm-quit --color dark'
+alias crontab="VIM_CRONTAB=true crontab"
+alias_if_exists 'diff' 'colordiff'
+alias_if_exists 'ag' 'rg'
 alias_if_exists 'vi' 'vim'
-#alias_if_exists 'fdupes' 'jdupes'
+alias_if_exists 'fdupes' 'jdupes'
 
 # Shortcuts
 alias zshconfig="vim ~/.zshrc"
@@ -23,7 +23,6 @@ alias tkillall="tmux kill-server"
 alias tkillother="tmux kill-session -a"
 alias update="sudo pacman -Syyu; /home/asefshahriar/dotfiles/vim/.vim/pack/vendor/start/update_plugin.sh; omz update"
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
-alias docker='sudo docker'
 
 
 ## cd & ls
@@ -56,7 +55,6 @@ alias ytad="youtube-dl --extract-audio --audio-format mp3 --write-description --
 ## Misc
 alias my-ip="curl ipinfo.io/ip 2> /dev/null"
 alias sr='screen -r'
-alias sb='subl'
 # alias tb="nc termbin.com 9999"
 alias spell='aspell check --dont-backup'
 alias grepc="grep -P --color=always" #Color grep
@@ -150,16 +148,10 @@ if command -v fzf > /dev/null; then
     if [[ -f $1 ]]; then
         vim $1
     else
-        file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
+        file="$(fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
     fi
   }
 
-  if command -v subl > /dev/null; then
-    u() {
-      local file
-      file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && subl "${file}" || return 1
-    }
-  fi
 
   #less on fuzzy find
   fl() {
@@ -190,8 +182,6 @@ function auto() {
 #   local dir
 #   dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 # }
-
-
 
 # OS dependent aliases
 case "$(uname -s)" in

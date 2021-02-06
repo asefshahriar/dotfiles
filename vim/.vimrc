@@ -1,36 +1,10 @@
 " Comments in Vimscript start with a `"`.
 
-" If you open this file in Vim, it'll be syntax highlighted for you.
+set nocompatible " Vim is based on Vi. Setting `nocompatible` switches from the default. Vi-compatibility mode and enables useful Vim functionality. This configuration option turns out not to be necessary for the file named '~/.vimrc', because Vim automatically enters nocompatible mode if that file is present. But we're including it here just in case this config file is loaded some other way (e.g. saved as `foo`, and then Vim started with `vim -u foo`).
 
-" Vim is based on Vi. Setting `nocompatible` switches from the default
-" Vi-compatibility mode and enables useful Vim functionality. This
-" configuration option turns out not to be necessary for the file named
-" '~/.vimrc', because Vim automatically enters nocompatible mode if that file
-" is present. But we're including it here just in case this config file is
-" loaded some other way (e.g. saved as `foo`, and then Vim started with
-" `vim -u foo`).
-set nocompatible
-set encoding=utf-8
-" Turn on syntax highlighting.
-syntax on
-
-" Disable the default Vim startup message.
-set shortmess+=I
-
-" Show line numbers.
-set number
-
-" This enables relative line numbering mode. With both number and
-" relativenumber enabled, the current line shows the true line number, while
-" all other lines (above and below) are numbered relative to the current line.
-" This is useful because you can tell, at a glance, what count is needed to
-" jump up or down to a particular line, by {count}k to go up or {count}j to go
-" down.
-set relativenumber
-
-" Always show the status line at the bottom, even if you only have one window open.
-set laststatus=2
-"Status-line
+" Status-line 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2 " Always show the status line at the bottom, even if you only have one window open.
 set statusline=
 set statusline+=%#PmenuSel#
 set statusline+=\ %y
@@ -42,55 +16,8 @@ set statusline+=%#Search#
 set statusline+=\ %l/%L
 set statusline+=\ [%c]
 
-" The backspace key has slightly unintuitive behavior by default. For example,
-" by default, you can't backspace before the insertion point set with 'i'.
-" This configuration makes backspace behave more reasonably, in that you can
-" backspace over anything.
-set backspace=indent,eol,start
-
-" By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
-" shown in any window) that has unsaved changes. This is to prevent you from "
-" forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
-" hidden buffers helpful enough to disable this protection. See `:help hidden`
-" for more information on this.
-set hidden
-
-" This setting makes search case-insensitive when all characters in the string
-" being searched are lowercase. However, the search becomes case-sensitive if
-" it contains any capital letters. This makes searching more convenient.
-set ignorecase
-set smartcase
-
-" Enable searching as you type, rather than waiting till you press enter.
-set incsearch
-
-" Unbind some useless/annoying default key bindings.
-nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
-
-" Disable audible bell because it's annoying.
-set noerrorbells visualbell t_vb=
-
-" Enable mouse support. You should avoid relying on this too much, but it can
-" sometimes be convenient.
-set mouse+=a
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
-
-:nnoremap <Tab> :bnext<CR>
-:nnoremap <S-Tab> :bprevious<CR>
-" Nerdtree shortcut
-map <silent> <C-n> :NERDTreeFocus<CR>
-let NERDTreeShowHidden=1
 
 
 " Colorscheme
@@ -121,8 +48,6 @@ endif
 
 let g:python_highlight_all = 1
 
-syntax on           " enable syntax processing
-
 " Spaces & Tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=4       " number of visual spaces per TAB
@@ -149,19 +74,23 @@ set linebreak           " Have lines wrap instead of continue off-screen
 set scrolloff=12        " Keep cursor in approximately the middle of the screen
 set updatetime=100      " Some plugins require fast updatetime
 set ttyfast             " Improve redrawing
+set encoding=utf-8      " Default encoding
+syntax on               " Turn on syntax highlighting.
+set shortmess+=I        " Disable the default Vim startup message.
+set number              " Show line numbers.
+set relativenumber      " This enables relative line numbering mode. With both number and relativenumber enabled, the current line shows the true line number, while all other lines (above and below) are numbered relative to the current line. This is useful because you can tell, at a glance, what count is needed to jump up or down to a particular line, by {count}k to go up or {count}j to go down.
 
 " Buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set hidden              " Allows having hidden buffers (not displayed in any window)
+set hidden                          " Allows having hidden buffers (not displayed in any window)
+:nnoremap <Tab> :bnext<CR>          " Use Tab to switch to next buffer
+:nnoremap <S-Tab> :bprevious<CR>    " Use Shift+Tab to switch to previous buffer
 
 " Sensible stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backspace=indent,eol,start     " Make backspace behave in a more intuitive way
-nmap Q <Nop>
-" 'Q' in normal mode enters Ex mode. You almost never want this.
-" Unbind for tmux
-map <C-a> <Nop>
-map <C-x> <Nop>
+nmap Q <Nop>                       " 'Q' in normal mode enters Ex mode. You almost never want this.
+map <C-a> <Nop>                    " Unbind for tmux
 
 
 "Searching
@@ -248,9 +177,8 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-"Copying to system clipboard or + buffer 
-vnoremap <C-c> "*y :let @+=@<CR>
-map <C-p> "+P
+"Connect default clipboard to system clipboard
+set clipboard=unnamedplus
 
 " Lose Bad Habits
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
@@ -355,4 +283,15 @@ function! ExecuteMacroOverVisualRange()
 endfunction
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
+" Deoplete for Jedi-Vim
+"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
+
+" CtrlP-VIM 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Nerdtree shortcut
+map <silent> <C-n> :NERDTreeFocus<CR>
+let NERDTreeShowHidden=1

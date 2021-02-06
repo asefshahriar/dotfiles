@@ -124,6 +124,3 @@ export TLDR_PAGES_SOURCE_LOCATION="https://raw.githubusercontent.com/tldr-pages/
 export TLDR_DOWNLOAD_CACHE_LOCATION="https://tldr-pages.github.io/assets/tldr.zip"
 export TLDR_LANGUAGE="en"
 
-
-
-source /home/asefshahriar/.config/broot/launcher/bash/br
