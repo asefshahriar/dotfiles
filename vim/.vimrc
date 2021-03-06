@@ -16,10 +16,6 @@ set statusline+=%#Search#
 set statusline+=\ %l/%L
 set statusline+=\ [%c]
 
-
-
-
-
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:molokai_original = 0
@@ -42,11 +38,10 @@ elseif exists("+termguicolors")
     " let g:sonokai_style = 'shusia'
 
 elseif &t_Co < 256
-    colorscheme molokai
-    set nocursorline " looks bad in this mode
+colorscheme molokai
+set nocursorline " looks bad in this mode
 endif
 
-let g:python_highlight_all = 1
 
 " Spaces & Tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,7 +61,7 @@ filetype plugin on      " load filetype specific plugin files
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 set laststatus=2        " Show the status line at the bottom
-set mouse+=a            " A necessary evil, mouse support
+set mouse=a            " A necessary evil, mouse support
 set noerrorbells visualbell t_vb=    "Disable annoying error noises
 set splitbelow          " Open new vertical split bottom
 set splitright          " Open new horizontal splits right
@@ -75,7 +70,7 @@ set scrolloff=12        " Keep cursor in approximately the middle of the screen
 set updatetime=100      " Some plugins require fast updatetime
 set ttyfast             " Improve redrawing
 set encoding=utf-8      " Default encoding
-syntax on               " Turn on syntax highlighting.
+syntax on               " Turn on syntax processing.
 set shortmess+=I        " Disable the default Vim startup message.
 set number              " Show line numbers.
 set relativenumber      " This enables relative line numbering mode. With both number and relativenumber enabled, the current line shows the true line number, while all other lines (above and below) are numbered relative to the current line. This is useful because you can tell, at a glance, what count is needed to jump up or down to a particular line, by {count}k to go up or {count}j to go down.
@@ -83,8 +78,6 @@ set relativenumber      " This enables relative line numbering mode. With both n
 " Buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hidden                          " Allows having hidden buffers (not displayed in any window)
-:nnoremap <Tab> :bnext<CR>          " Use Tab to switch to next buffer
-:nnoremap <S-Tab> :bprevious<CR>    " Use Shift+Tab to switch to previous buffer
 
 " Sensible stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -135,10 +128,6 @@ nnoremap gV `[v`]
 map H ^
 map L $
 
-" (Shift)Tab (de)indents code
-vnoremap <Tab> >
-vnoremap <S-Tab> <
-
 " Capital JK move code lines/blocks up & down
 " TODO improve functionality
 nnoremap K :move-2<CR>==
@@ -155,16 +144,29 @@ nnoremap <silent> g* g*zz
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 
-" Very magic by default
-" nnoremap ? ?\v
-" nnoremap / /\v
-" cnoremap %s/ %sm/
-
-
 " Leader
-let mapleader=" "       " leader is space
+map <SPACE> <Leader>
+nnoremap <Leader><SPACE> <C-^>
+nmap <Leader>b :buffers<CR>
+"  y d p P   --  Quick copy paste into system clipboard
+nmap <Leader>y "+y
+nmap <Leader>d "+d
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+"  w wq q   --  Quick Save
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>wq :wq<CR>
+nmap <Leader>Q :q!<CR>
+"  - |     --  Split with leader
+nnoremap <Leader>- :sp<CR>
+nnoremap <Leader>\| :vsp<CR>
 
-" Tmux
+ ""Tmux
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " These lines change the cursor from block cursor mode to vertical bar cursor mode when using tmux.
 " Without these lines, tmux always uses block cursor mode.
@@ -177,8 +179,6 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-"Connect default clipboard to system clipboard
-set clipboard=unnamedplus
 
 " Lose Bad Habits
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
@@ -295,3 +295,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Nerdtree shortcut
 map <silent> <C-n> :NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
+
+" Python syntax highlight
+let g:python_highlight_all = 1
